@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjIntegrador.Models
 {
-    public class Vendas
+    public class Venda
     {
         public int Id { get; set; }
         public decimal TotalVenda { get; set; }

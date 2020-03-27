@@ -133,7 +133,7 @@
     <Compile Include="Models\ItensVenda.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\VendaFuncionario.cs" />
-    <Compile Include="Models\Vendas.cs" />
+    <Compile Include="Models\Venda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
