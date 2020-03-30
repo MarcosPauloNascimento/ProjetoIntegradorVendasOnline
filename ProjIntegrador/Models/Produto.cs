@@ -7,9 +7,12 @@ namespace ProjIntegrador.Models
 {
     public class Produto
     {
-        public int Id { get; set; }
+        public int ProdutoId { get; set; }
         public String Descricao { get; set; }
         public decimal Valor { get; set; }
         public StatusEnum Status { get; set; }
+
+        public virtual ICollection<Interessado> Interessados { get; set; }
+        public virtual ICollection<Venda> Vendas{ get; set; }
     }
 }

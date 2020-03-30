@@ -7,14 +7,19 @@ namespace ProjIntegrador.Models
 {
     public class Venda
     {
-        public int Id { get; set; }
+        public int VendaId { get; set; }
         public decimal TotalVenda { get; set; }
         public FormaPagamentoEnum FormaPagamento { get; set; }
         public decimal ValorDesconto { get; set; }
         public DateTime DataVenda { get; set; }
 
-        public int IdCliente { get; set; }
-        public int IdVendedor { get; set; }
+        public Cliente Cliente { get; set; }
+        public int ClienteId { get; set; }
+
+        public Vendedor Vendedor { get; set; }
+        public int VendedorId { get; set; }
+
+        public virtual ICollection<Produto> Produtos { get; set; }
 
     }
 }

@@ -7,10 +7,12 @@ namespace ProjIntegrador.Models
 {
     public class VendaFuncionario
     {
-        public int IdFuncionario { get; set; }
-        public int IdVenda { get; set; }
-        public decimal ValorComissao { get; set; }
-        public Funcionario Funcionario { get; set; }
+        public Vendedor Vendedor { get; set; }
+        public int VendedorId { get; set; }
+
         public Venda Venda { get; set; }
+        public int VendaId { get; set; }
+
+        public decimal ValorComissao { get; set; }
     }
 }

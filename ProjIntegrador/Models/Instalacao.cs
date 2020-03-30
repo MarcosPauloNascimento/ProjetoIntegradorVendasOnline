@@ -7,14 +7,19 @@ namespace ProjIntegrador.Models
 {
     public class Instalacao
     {
-        public int Id { get; set; }
+        public int InstalacaoId { get; set; }
         public DateTime DataInstalacao { get; set; }
         public string Observacao { get; set; }
-        public int IdEndereco { get; set; }
-        public Endereco EnderecoInstalacao { get; set; }
-        public int IdVenda { get; set; }
-        public Venda Venda { get; set; }
-        public int IdInstalador { get; set; }
+
+        public Endereco Endereco { get; set; }
+        public int EnderecoId { get; set; }
+
         public Instalador Instalador { get; set; }
+        public int InstaladorId { get; set; }
+        
+        public Venda Venda { get; set; }
+        public int VendaId { get; set; }
+
+
     }
 }

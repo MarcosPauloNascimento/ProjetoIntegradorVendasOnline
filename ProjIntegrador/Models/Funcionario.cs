@@ -7,12 +7,14 @@ namespace ProjIntegrador.Models
 {
     public class Funcionario
     {
-        public int Id { get; set; }
+        public int FuncionarioId { get; set; }
         public long CPF { get; set; }
         public string Nome { get; set; }
         public DateTime DataContratacao { get; set; }
-        public int Comissao { get; set; }
         public StatusEnum Status { get; set; }
+
+        public Endereco Endereco { get; set; }
+        public int EnderecoId { get; set; }
 
     }
 }
