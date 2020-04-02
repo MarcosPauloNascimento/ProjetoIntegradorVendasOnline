@@ -6,7 +6,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
-namespace ProjIntegrador.AcessoDados
+namespace ProjIntegrador.DataAccess
 {
     public class AppDbContext : DbContext
     {
@@ -24,10 +24,30 @@ namespace ProjIntegrador.AcessoDados
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             modelBuilder.Properties<string>().Configure(c => c.HasMaxLength(100));
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ItensVenda>().HasKey(iv => new { iv.VendaId, iv.ProdutoId });
+
+            modelBuilder.Entity<VendaFuncionario>().HasKey(vf => new { vf.VendaId, vf.VendedorId });
+
+            modelBuilder.Entity<Funcionario>()
+                        .HasRequired(c => c.Endereco)
+                        .WithMany()
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Instalacao>()
+                        .HasRequired(c => c.Venda)
+                        .WithMany()
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<VendaFuncionario>()
+                        .HasRequired(c => c.Vendedor)
+                        .WithMany()
+                        .WillCascadeOnDelete(false);
         }
 
     }
