@@ -12,6 +12,7 @@ namespace ProjIntegrador.Models
         public decimal Valor { get; set; }
         public int Quantidade { get; set; }
         public StatusEnum Status { get; set; }
+        public string ImagemProdudo { get; set; }
 
         public virtual ICollection<Interessado> Interessados { get; set; }
         public virtual ICollection<Venda> Vendas{ get; set; }
