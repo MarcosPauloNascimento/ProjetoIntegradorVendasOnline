@@ -130,6 +130,7 @@
     <Compile Include="Controllers\InstalacaoController.cs" />
     <Compile Include="Controllers\InstaladorController.cs" />
     <Compile Include="Controllers\InteressadoController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="Controllers\VendedorController.cs" />
     <Compile Include="DataAccess\AppDbContext.cs" />
@@ -248,6 +249,11 @@
     <Content Include="Views\Vendedor\Details.cshtml" />
     <Content Include="Views\Vendedor\Edit.cshtml" />
     <Content Include="Views\Vendedor\Index.cshtml" />
+    <Content Include="Views\Produto\Create.cshtml" />
+    <Content Include="Views\Produto\Delete.cshtml" />
+    <Content Include="Views\Produto\Details.cshtml" />
+    <Content Include="Views\Produto\Edit.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
