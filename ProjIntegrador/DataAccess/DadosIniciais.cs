@@ -37,6 +37,7 @@ namespace ProjIntegrador.DataAccess
             };
 
             listaEndereco.ForEach(e => context.Endereco.Add(e));
+            context.SaveChanges();
 
             List<Produto> listaProdutos = new List<Produto>()
             {
@@ -64,6 +65,7 @@ namespace ProjIntegrador.DataAccess
             };
 
             listaProdutos.ForEach(p => context.Produto.Add(p));
+            context.SaveChanges();
 
             List<Funcionario> listaFuncionarios = new List<Funcionario>()
             {
@@ -86,6 +88,7 @@ namespace ProjIntegrador.DataAccess
             };
 
             listaFuncionarios.ForEach(f => context.Funcionario.Add(f));
+            context.SaveChanges();
 
             List<Instalador> listaInstalador = new List<Instalador>()
             {
@@ -96,6 +99,7 @@ namespace ProjIntegrador.DataAccess
             };
 
             listaInstalador.ForEach(i => context.Instalador.Add(i));
+            context.SaveChanges();
 
             List<Vendedor> listaVendedor = new List<Vendedor>()
             {
@@ -105,6 +109,7 @@ namespace ProjIntegrador.DataAccess
                 }
             };
 
+            listaVendedor.ForEach(v => context.Vendedor.Add(v));
             context.SaveChanges();
         }
     }
