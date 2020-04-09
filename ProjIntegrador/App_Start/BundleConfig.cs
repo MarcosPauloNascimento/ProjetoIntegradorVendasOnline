@@ -28,6 +28,9 @@ namespace ProjIntegrador
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/images/default").Include(
+                      "~/Content/images/default.png";
         }
     }
 }

@@ -1,74 +1,103 @@
 ﻿@model ProjIntegrador.Models.Endereco
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Endereços
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Endereco", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Detalhes do Endereço
+                    </div>
 
-<h2>Details</h2>
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="col-md-3">
+                            <dt>
+                                Descrição
+                            </dt>
 
-<div>
-    <h4>Endereco</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Descricao)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                Número
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Numero)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Complemento)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Complemento)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Complemento)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Bairro)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Bairro)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CEP)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CEP)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.CEP)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CEP)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Estado)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Estado)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Cidade)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Cidade)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-
-    </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EnderecoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

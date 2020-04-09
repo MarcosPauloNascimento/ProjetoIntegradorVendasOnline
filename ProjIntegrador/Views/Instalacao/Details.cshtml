@@ -1,58 +1,73 @@
 ﻿@model ProjIntegrador.Models.Instalacao
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Instalações
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Instalacao", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Detalhes da Instalação
+                    </div>
 
-<h2>Details</h2>
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="col-md-3">
+                            <dt>
+                                Observação
+                            </dt>
 
-<div>
-    <h4>Instalacao</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Endereco.Descricao)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Observacao)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Endereco.Descricao)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                ID do Endereço
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Instalador.InstaladorId)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.EnderecoId)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Instalador.InstaladorId)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                ID do Instalador
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Venda.VendaId)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.InstaladorId)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Venda.VendaId)
-        </dd>
+                        <div class="col-md-3">
+                            <dt>
+                                ID da Venda
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataInstalacao)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.VendaId)
+                            </dd>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataInstalacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Observacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Observacao)
-        </dd>
-
-    </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InstalacaoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

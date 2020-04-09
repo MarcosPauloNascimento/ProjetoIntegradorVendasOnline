@@ -1,66 +1,94 @@
 ﻿@model ProjIntegrador.Models.Venda
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Vendas
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Venda", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Detalhes da Venda
+                    </div>
 
-<h2>Details</h2>
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="dl-horizontal">
+                            <div class="col-md-3">
+                                <dt>
+                                    ID do Cliente
+                                </dt>
 
-<div>
-    <h4>Venda</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.Nome)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.ClienteId)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.Nome)
-        </dd>
+                            <div class="col-md-3">
+                                <dt>
+                                    ID do Vendedor
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Vendedor.VendedorId)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.VendedorId)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Vendedor.VendedorId)
-        </dd>
+                            <div class="col-md-3">
+                                <dt>
+                                    Valor Total da Venda
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalVenda)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.TotalVenda)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TotalVenda)
-        </dd>
+                            <div class="col-md-3">
+                                <dt>
+                                    Forma de Pagamento
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FormaPagamento)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.FormaPagamento)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FormaPagamento)
-        </dd>
+                            <div class="col-md-3">
+                                <dt>
+                                    Valor de desconto
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ValorDesconto)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.ValorDesconto)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ValorDesconto)
-        </dd>
+                            <div class="col-md-3">
+                                <dt>
+                                    Data da Venda
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataVenda)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.DataVenda)
+                                </dd>
+                            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataVenda)
-        </dd>
-
-    </dl>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.VendaId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

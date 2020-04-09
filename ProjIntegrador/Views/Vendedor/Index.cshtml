@@ -1,39 +1,59 @@
 ﻿@model IEnumerable<ProjIntegrador.Models.Vendedor>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Funcionario.CPF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comissao)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Funcionario.CPF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comissao)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VendedorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VendedorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VendedorId })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Vendedores
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Criar Novo", "Create", "Vendedor", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Vendedores Cadastrados
+                    </div>
+                    <div class="table-responsive">
+                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Vendedor</th>
+                                    <th class="text-center">Comissão</th>
+                                    <th class="text-center">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.Funcionario.Nome)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.Comissao)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.VendedorId }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.VendedorId }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.VendedorId })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

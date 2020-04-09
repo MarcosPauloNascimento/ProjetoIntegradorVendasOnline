@@ -1,88 +1,126 @@
 ﻿@model ProjIntegrador.Models.Interessado
 
-@{
-    ViewBag.Title = "Delete";
-}
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Interessado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Endereco.Descricao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Endereco.Descricao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataAgendamento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataAgendamento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataVisita)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataVisita)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Interessados
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Interessado", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Deletar Interessado
+                    </div>
+                    <br />
+
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="dl-horizontal">
+
+                            <div class="col-md-3">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Nome)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Telefone)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Telefone)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    Data do Cadastro
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.DataCadastro)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    Data do Agendamento
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.DataAgendamento)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    Data da Visita
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.DataVisita)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Status)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    ID do Endereço
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.EnderecoId)
+                                </dd>
+                            </div>
+
+                        </div>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Deletar Interessado" class="btn-wide btn btn-success mb-3" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

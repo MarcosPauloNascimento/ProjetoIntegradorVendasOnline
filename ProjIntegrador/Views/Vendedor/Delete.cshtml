@@ -1,40 +1,65 @@
 ﻿@model ProjIntegrador.Models.Vendedor
 
-@{
-    ViewBag.Title = "Delete";
-}
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Vendedor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Funcionario.CPF)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Funcionario.CPF)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Comissao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Comissao)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Vendedores
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Vendedor", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Deletar Vendedor
+                    </div>
+                    <br />
+
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="dl-horizontal">
+                            <div class="col-md-3">
+                                <dt>
+                                    ID do Funcionário
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.FuncionarioId)
+                                </dd>
+                            </div>
+
+                            <div class="col-md-3">
+                                <dt>
+                                    Comissão
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Comissao)
+                                </dd>
+                            </div>
+
+                        </div>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Deletar Vendedor" class="btn-wide btn btn-success mb-3" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

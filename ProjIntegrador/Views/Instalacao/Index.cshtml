@@ -1,57 +1,67 @@
 ﻿@model IEnumerable<ProjIntegrador.Models.Instalacao>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instalador.InstaladorId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Venda.VendaId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataInstalacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacao)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Instalador.InstaladorId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Venda.VendaId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataInstalacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacao)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InstalacaoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InstalacaoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InstalacaoId })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Instalações
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Criar Novo", "Create", "Instalacao", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Instalaçãos Cadastrados
+                    </div>
+                    <div class="table-responsive">
+                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Instalação</th>
+                                    <th class="text-center">Venda</th>
+                                    <th class="text-center">Data</th>
+                                    <th class="text-center">Observação</th>
+                                    <th class="text-center">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.InstalacaoId)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.VendaId)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.DataInstalacao)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.Observacao)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.InstalacaoId }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.InstalacaoId }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.InstalacaoId })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
