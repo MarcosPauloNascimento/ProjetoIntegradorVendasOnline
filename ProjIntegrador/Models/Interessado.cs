@@ -14,7 +14,7 @@ namespace ProjIntegrador.Models
         public DateTime DataCadastro { get; set; }
         public DateTime DataAgendamento { get; set; }
         public DateTime DataVisita { get; set; }
-        public StatusEnum Status { get; set; }
+        public StatusInteressadoEnum Status { get; set; }
 
         public Endereco Endereco { get; set; }
         public int EnderecoId { get; set; }
