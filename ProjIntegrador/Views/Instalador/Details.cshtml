@@ -1,26 +1,42 @@
 ﻿@model ProjIntegrador.Models.Instalador
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Instalador
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Instalador", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Detalhes do Instalador
+                    </div>
 
-<h2>Details</h2>
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Funcionario.CPF)
+                            </dt>
 
-<div>
-    <h4>Instalador</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Funcionario.CPF)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Funcionario.CPF)
-        </dd>
-
-    </dl>
+                            <dd>
+                                @Html.DisplayFor(model => model.Funcionario.CPF)
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InstaladorId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
