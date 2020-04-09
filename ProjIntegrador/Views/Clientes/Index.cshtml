@@ -8,7 +8,8 @@
                     <div>
                         Clientes
                         <div class="page-title-subheading">
-                            This is an example dashboard created using build-in elements and components.</div>
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,33 +32,38 @@
                                     <th class="text-center">CPF</th>
                                     <th class="text-center">Telefone</th>
                                     <th class="text-center">Email</th>
+                                    <th class="text-center">Endereço ID</th>
                                     <th class="text-center">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model) {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Endereco.Descricao)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Nome)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.CPF)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Telefone)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Email)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }) |
-                                            @Html.ActionLink("Details", "Details", new { id=item.ClienteId }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId })
-                                        </td>
-                                    </tr>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.Endereco.Descricao)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.CPF)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.Telefone)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.EnderecoId)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ClienteId }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.ClienteId }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ClienteId })
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>
