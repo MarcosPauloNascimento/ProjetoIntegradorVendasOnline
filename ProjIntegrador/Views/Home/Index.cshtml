@@ -1,4 +1,6 @@
-﻿<div class="app-main__outer">
+﻿@model IEnumerable<ProjIntegrador.Models.Produto>
+
+<div class="app-main__outer">
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -6,127 +8,78 @@
                     <div>
                         Home
                         <div class="page-title-subheading">
-                            This is an example dashboard created using build-in elements and components.</div>
+                            This is an example dashboard created using build-in elements and components.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
+            @foreach (var item in Model)
+            {
+                <div class="card border-primary mb-3" style="width: 18%; margin-right: 2%;">
+                    @*@if (item.ImagemProdudo != null)
+                    {
+                        @{
+                            var base64 = Convert.ToBase64String(item.ImagemProdudo).ToString();
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+                        <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                    }*@
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    @if (item.Status == ProjIntegrador.Models.StatusEnum.Inativo)
+                    {
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
+                            <p>Produto Indisponível</p>
                         </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Me avise</a>
                         </div>
-                    </div>
+                    }
+                    else
+                    {
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.DetalheProduto)</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Saber Mais</a>
+                        </div>
+                    }
                 </div>
-            </div>
 
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @*<div class="col-md-3 mb-3">
+                        <div class="card">
+                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
 
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            @if (item.Status == ProjIntegrador.Models.StatusEnum.Inativo)
+                            {
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
+                                    <p>Produto Indisponível</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">Me avise</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
+                                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-primary">Saber Mais</a>
+                                </div>
+                            }
 
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
                         </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div>*@
 
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-6 col-xl-4">
-                <div class="card mb-3 widget-content bg-midnight-bloom">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading">Nome</div>
-                            <div class="widget-subheading">
-                                Itens: 5
-                                Status: Disponível 
-                            </div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white">
-                                <span>150,00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+            }
         </div>
     </div>
 </div>

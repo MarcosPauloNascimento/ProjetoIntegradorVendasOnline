@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjIntegrador.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,10 @@ namespace ProjIntegrador.Controllers
 {
     public class HomeController : Controller
     {
+        private AppDbContext db = new AppDbContext();
         public ActionResult Index()
         {
-            return View();
+            return View(db.Produto.ToList().OrderByDescending(p => p.Status));
         }
 
         public ActionResult About()

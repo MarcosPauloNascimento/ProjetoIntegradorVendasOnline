@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -47,10 +48,14 @@ namespace ProjIntegrador.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProdutoId,Descricao,Valor,Quantidade,Status,ImagemProdudo")] Produto produto)
+        public ActionResult Create([Bind(Include = "ProdutoId,Descricao,DetalheProduto,Valor,Quantidade,Status,ImagemProdudo")] Produto produto)
         {
             if (ModelState.IsValid)
             {
+                //using (var binaryReader = new BinaryReader(produto.ImagemProdudo.InputStream))
+                //    produto.ImagemProdudo = binaryReader.ReadBytes(produto.ImagemProdudo.ContentLength);
+
+
                 db.Produto.Add(produto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,7 +84,7 @@ namespace ProjIntegrador.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProdutoId,Descricao,Valor,Quantidade,Status,ImagemProdudo")] Produto produto)
+        public ActionResult Edit([Bind(Include = "ProdutoId,Descricao,DetalheProduto,Valor,Quantidade,Status,ImagemProdudo")] Produto produto)
         {
             if (ModelState.IsValid)
             {

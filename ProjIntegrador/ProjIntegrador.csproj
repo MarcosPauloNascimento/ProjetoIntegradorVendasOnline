@@ -164,6 +164,14 @@
     <Compile Include="Migrations\202004082241184_alterandoStatusInteressado.designer.cs">
       <DependentUpon>202004082241184_alterandoStatusInteressado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004090442169_adicionandoPropriedadeProduto.cs" />
+    <Compile Include="Migrations\202004090442169_adicionandoPropriedadeProduto.designer.cs">
+      <DependentUpon>202004090442169_adicionandoPropriedadeProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004090443238_adicionandoPropriedadeDetalheProduto.cs" />
+    <Compile Include="Migrations\202004090443238_adicionandoPropriedadeDetalheProduto.designer.cs">
+      <DependentUpon>202004090443238_adicionandoPropriedadeDetalheProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -377,7 +385,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Enuns\" />
-    <Folder Include="Content\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -399,6 +406,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004082241184_alterandoStatusInteressado.resx">
       <DependentUpon>202004082241184_alterandoStatusInteressado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090442169_adicionandoPropriedadeProduto.resx">
+      <DependentUpon>202004090442169_adicionandoPropriedadeProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004090443238_adicionandoPropriedadeDetalheProduto.resx">
+      <DependentUpon>202004090443238_adicionandoPropriedadeDetalheProduto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
