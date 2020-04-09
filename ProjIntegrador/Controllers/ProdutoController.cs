@@ -48,14 +48,17 @@ namespace ProjIntegrador.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProdutoId,Descricao,DetalheProduto,Valor,Quantidade,Status,ImagemProdudo")] Produto produto)
+        public ActionResult Create([Bind(Include = "ProdutoId,Descricao,DetalheProduto,Valor,Quantidade,Status,ImagemProdudo, ImageFile")] Produto produto)
         {
+            string nomeArquivo = Path.GetFileNameWithoutExtension(produto.ImageFile.FileName);
+            string extensao = Path.GetExtension(produto.ImageFile.FileName);
+            nomeArquivo = nomeArquivo + extensao;
+            produto.ImagemProdudo = "~/App_Data/ImagensProduto/" + nomeArquivo;
+            nomeArquivo = Path.Combine(Server.MapPath("~/App_Data/ImagensProduto"), nomeArquivo);
+            produto.ImageFile.SaveAs(nomeArquivo);
+
             if (ModelState.IsValid)
             {
-                //using (var binaryReader = new BinaryReader(produto.ImagemProdudo.InputStream))
-                //    produto.ImagemProdudo = binaryReader.ReadBytes(produto.ImagemProdudo.ContentLength);
-
-
                 db.Produto.Add(produto);
                 db.SaveChanges();
                 return RedirectToAction("Index");

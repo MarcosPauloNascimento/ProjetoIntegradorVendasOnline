@@ -172,6 +172,10 @@
     <Compile Include="Migrations\202004090443238_adicionandoPropriedadeDetalheProduto.designer.cs">
       <DependentUpon>202004090443238_adicionandoPropriedadeDetalheProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004091841198_addImagem.cs" />
+    <Compile Include="Migrations\202004091841198_addImagem.designer.cs">
+      <DependentUpon>202004091841198_addImagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -383,7 +387,7 @@
     <Content Include="Views\Interessado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\ImagensProduto\" />
     <Folder Include="Models\Enuns\" />
   </ItemGroup>
   <ItemGroup>
@@ -412,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004090443238_adicionandoPropriedadeDetalheProduto.resx">
       <DependentUpon>202004090443238_adicionandoPropriedadeDetalheProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091841198_addImagem.resx">
+      <DependentUpon>202004091841198_addImagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -18,15 +18,8 @@
             @foreach (var item in Model)
             {
                 <div class="card border-primary mb-3" style="width: 18%; margin-right: 2%;">
-                    @*@if (item.ImagemProdudo != null)
-                    {
-                        @{
-                            var base64 = Convert.ToBase64String(item.ImagemProdudo).ToString();
-                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                        }
-                        <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
-                    }*@
-                    <img class="card-img-top" src="..." alt="Card image cap">
+
+                    <img class="card-img-top" src="@Url.Content(item.ImagemProdudo)" alt="imagem">
                     @if (item.Status == ProjIntegrador.Models.StatusEnum.Inativo)
                     {
                         <div class="card-body">
@@ -48,37 +41,6 @@
                         </div>
                     }
                 </div>
-
-                @*<div class="col-md-3 mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-
-                            @if (item.Status == ProjIntegrador.Models.StatusEnum.Inativo)
-                            {
-                                <div class="card-body">
-                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
-                                    <p>Produto Indisponível</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-primary">Me avise</a>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="card-body">
-                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Descricao)</h5>
-                                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-primary">Saber Mais</a>
-                                </div>
-                            }
-
-                        </div>
-                    </div>*@
-
-
-
             }
         </div>
     </div>
