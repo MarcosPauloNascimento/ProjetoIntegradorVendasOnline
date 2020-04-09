@@ -1,58 +1,81 @@
 ﻿@model ProjIntegrador.Models.Produto
 
-@{
-    ViewBag.Title = "Details";
-}
+<div class="app-main__outer">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div>
+                        Produtos
+                        <div class="page-title-subheading">
+                            This is an example dashboard created using build-in elements and components.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Voltar", "Index", "Produto", null, new { @class = "btn-wide btn btn-success mb-3" })
+            </div>
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Detalhes do Produto
+                    </div>
+                    
+                    <div style="padding: 0 25px; margin: 10px 0;">
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Descricao)
+                            </dt>
 
-<h2>Details</h2>
+                            <dd>
+                                @Html.DisplayFor(model => model.Descricao)
+                            </dd>
+                        </div>
 
-<div>
-    <h4>Produto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Valor)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Valor)
+                            </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Valor)
-        </dt>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Quantidade)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Valor)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Quantidade)
+                            </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </dt>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantidade)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Status)
+                            </dd>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+                        <div class="col-md-3">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ImagemProdudo)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagemProdudo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagemProdudo)
-        </dd>
-
-    </dl>
+                            <dd>
+                                @Html.DisplayFor(model => model.ImagemProdudo)
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdutoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
